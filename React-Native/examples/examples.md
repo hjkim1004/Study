@@ -56,12 +56,9 @@
 # Example Screenshot
 
 ### 1. Counter
-
-![Counter 실습 화면](Screenshots/1.Counter.png)
-
+<img src="https://github.com/dadmi97/Study/blob/main/React-Native/examples/Screenshots/1.Counter.jpg" width="20%" height="auto" alt="Counter 실습 화면"/>
 
 
 ### 2. TodoList
-
-![TodoList 실습 화면](Screenshots/2.TodoList.png)
+<img src="https://github.com/dadmi97/Study/blob/main/React-Native/examples/Screenshots/2.TodoList.jpg" width="20%" height="auto" alt="TodoList 실습 화면"/>
 
