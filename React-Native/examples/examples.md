@@ -1,4 +1,4 @@
-# Examples
+# Example List
 
 ### 🕑 1. Counter
 
@@ -50,4 +50,18 @@
 ### 🧚‍♂️ 5. SNSApp
 
 * 다양한 기술을 이용하여 SNS UI 클론(Clone) 앱 제작
+
+
+
+# Example Screenshot
+
+### 1. Counter
+
+[Counter 실습 화면]: ./Screenshots/1.Counter	"Counter"
+
+
+
+### 2. TodoList
+
+[TodoList 실습 화면]: ./Screenshots/2.TodoList	"Todo List"
 
