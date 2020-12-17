@@ -35,6 +35,7 @@ interface Props {
 }
 interface State {
   count: number;
+  error: boolean;
 }
 class Counter extends React.Component<Props, State> {
   constructor(props: Props) {
@@ -43,33 +44,57 @@ class Counter extends React.Component<Props, State> {
 
     this.state = {
       count: props.initValue,
+      error: false,
     };
   }
   render() {
     const {title} = this.props;
-    const {count} = this.state;
+    const {count, error} = this.state;
     return (
       <Container>
-        {title && (
-          <TitleContainer>
-            <TitleLabel>{title}</TitleLabel>
-          </TitleContainer>
+        {!error && (
+          {title && (
+            <TitleContainer>
+              <TitleLabel>{title}</TitleLabel>
+            </TitleContainer>
+          )}
+          <CountContainer>
+            <CountLabel>{count}</CountLabel>
+          </CountContainer>
+          <ButtonContainer>
+            <Button
+              iconName="plus"
+              onPress={() => this.setState({count: count + 1})}
+            />
+            <Button
+              iconName="minus"
+              onPress={() => this.setState({count: count - 1})}
+            />
+          </ButtonContainer>
         )}
-        <CountContainer>
-          <CountLabel>{count}</CountLabel>
-        </CountContainer>
-        <ButtonContainer>
-          <Button
-            iconName="plus"
-            onPress={() => this.setState({count: count + 1})}
-          />
-          <Button
-            iconName="minus"
-            onPress={() => this.setState({count: count - 1})}
-          />
-        </ButtonContainer>
       </Container>
     );
+  }
+  componentDidCatch(error: Error, info: React.ErrorInfo) {
+    this.setState({
+      error: true,
+    });
+  }
+  static getDerivedStateFromProps(nextProps, prevState){
+    if(nextProps.id !== prevState.id){
+      return { value: nextProps.value };
+    }
+    return null
+  }
+  shouldComponentUpdate(nextProps, nextState){
+    console.log('shouldComponentUpdate');
+    return nextProps.id !=== this.props.id;
+  }
+  static getDerivedStateFromProps(nextProps, prevState){
+    if(nextProps.id !== prevState.id){
+      return { value: nextProps.value };
+    }
+    return null
   }
 }
 
